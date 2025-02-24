@@ -1,6 +1,35 @@
 {
 	"settings": {
 		"appearanceTools": true,
+		"color": {
+			"palette": [
+				{
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#404040",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#003c71",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#fff200",
+					"name": "Accent",
+					"slug": "accent"
+				},
+				{
+					"color": "#9e9828",
+					"name": "Hover",
+					"slug": "hover"
+				}
+			]
+		},
 		"layout": {
 			"contentSize": "620px",
 			"wideSize": "1000px"
@@ -16,6 +45,8 @@
 			]
 		},
 		"typography": {
+			"defaultFontSizes": false,
+			"fluid": false,
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
@@ -68,12 +99,42 @@
 					"name": "PT Serif",
 					"slug": "pt-serif"
 				}
+			],
+			"fontSizes": [
+				{
+					"name": "Small",
+					"size": "1rem",
+					"slug": "small"
+				},
+				{
+					"name": "Medium",
+					"size": "1.13rem",
+					"slug": "medium"
+				},
+				{
+					"name": "Large",
+					"size": "1.5rem",
+					"slug": "large"
+				},
+				{
+					"name": "Extra Large",
+					"size": "2rem",
+					"slug": "x-large"
+				}
 			]
 		},
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
+		"color": {
+			"text": "var(--wp--preset--color--contrast)"
+		},
 		"elements": {
+			"button": {
+				"color": {
+					"text": "var(--wp--preset--color--accent)"
+				}
+			},
 			"h1": {
 				"typography": {
 					"fontSize": "3rem"
@@ -105,10 +166,23 @@
 				}
 			},
 			"heading": {
+				"color": {
+					"text": "var(--wp--preset--color--contrast)"
+				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--pt-serif)",
 					"fontStyle": "normal",
 					"fontWeight": "700"
+				}
+			},
+			"link": {
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--accent)"
+					}
+				},
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
 				}
 			}
 		},
