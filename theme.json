@@ -98,6 +98,29 @@
 					"fontFamily": "\"PT Serif\", serif",
 					"name": "PT Serif",
 					"slug": "pt-serif"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "\"Noto Serif\"",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/noto-serif/noto-serif-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Noto Serif\"",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/noto-serif/noto-serif-700-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "\"Noto Serif\", serif",
+					"name": "Noto Serif",
+					"slug": "noto-serif"
 				}
 			],
 			"fontSizes": [
@@ -128,6 +151,17 @@
 	"styles": {
 		"blocks": {
 			"core/button": {
+				"color": {
+					"background": "var(--wp--preset--color--vivid-red)",
+					"text": "var(--wp--preset--color--base)"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "var(--wp--preset--color--base)"
+						}
+					}
+				},
 				"shadow": "var(--wp--preset--shadow--natural)",
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--pt-serif)",
@@ -151,7 +185,8 @@
 		"elements": {
 			"button": {
 				"color": {
-					"text": "var(--wp--preset--color--accent)"
+					"background": "var(--wp--preset--color--vivid-red)",
+					"text": "var(--wp--preset--color--base)"
 				}
 			},
 			"h1": {
@@ -214,10 +249,11 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--open-sans)",
+			"fontFamily": "var(--wp--preset--font-family--noto-serif)",
 			"fontSize": "var(--wp--preset--font-size--small)",
 			"fontStyle": "normal",
-			"fontWeight": "400"
+			"fontWeight": "400",
+			"lineHeight": "1.5"
 		}
 	},
 	"templateParts": [
