@@ -54,7 +54,7 @@ function schoolsite_register_custom_post_types() {
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => 5,
-        'menu_icon'          => 'dashicons-admin-users',
+        'menu_icon'          => 'dashicons-buddicons-buddypress-logo',
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
         'template' => array(
             array('core/paragraph', array(
