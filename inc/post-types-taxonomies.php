@@ -125,16 +125,15 @@ function schoolsite_register_custom_post_types() {
         'menu_icon'          => 'dashicons-groups',
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
         'template' => array(
-            array('core/paragraph', array(
-                'placeholder' => 'Enter description here...'
-            )),
-            array('core/button', array(
-                'text' => 'Click Here',
-                'url' => '#',
-                'align' => 'center'
-            ))
-        ),
-        'template_lock' => 'all'
+        array('core/heading', array(
+            'placeholder' => 'Enter heading here...',
+            'level' => 2
+        )),
+        array('core/address', array(
+            'placeholder' => 'Enter address here...'
+        ))
+),
+'template_lock' => 'all'
     );
     register_post_type( 'fwd-staff', $args );
 }
