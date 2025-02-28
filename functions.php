@@ -45,6 +45,15 @@ function change_student_cpt_title_placeholder($title, $post)
 }
 add_filter('enter_title_here', 'change_student_cpt_title_placeholder', 10, 2);
 
+function change_staff_cpt_title_placeholder($title, $post)
+{
+    if ($post->post_type == 'fwd-staff') {
+        return 'Add staff name';
+    }
+    return $title;
+}
+add_filter('enter_title_here', 'change_staff_cpt_title_placeholder', 10, 3);
+
 function school_setup()
 {
     add_editor_style(get_stylesheet_uri());

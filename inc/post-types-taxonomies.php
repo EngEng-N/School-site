@@ -126,11 +126,8 @@ function schoolsite_register_custom_post_types() {
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
         'template' => array(
         array('core/heading', array(
-            'placeholder' => 'Enter heading here...',
+            'placeholder' => 'Enter job title here...',
             'level' => 2
-        )),
-        array('core/address', array(
-            'placeholder' => 'Enter address here...'
         ))
 ),
 'template_lock' => 'all'
@@ -141,6 +138,7 @@ add_action( 'init', 'schoolsite_register_custom_post_types' );
 
 function schoolsite_register_taxonomies() {
     
+    // Student Taxonomy
     $labels = array(
         'name'                  => _x( 'Student Categories', 'taxonomy general name', 'school-theme' ),
         'singular_name'         => _x( 'Student Category', 'taxonomy singular name', 'school-theme' ),
@@ -174,6 +172,49 @@ function schoolsite_register_taxonomies() {
         'rewrite'           => array( 'slug' => 'student-categories' ),
     );
     register_taxonomy( 'fwd-student-category', array( 'fwd-student' ), $args );
+
+    // Staff Taxonomy
+    $labels = array(
+        'name'                  => _x( 'Staff Categories', 'taxonomy general name', 'school-theme' ),
+        'singular_name'         => _x( 'Staff Category', 'taxonomy singular name', 'school-theme' ),
+        'search_items'          => __( 'Staff Student Categories', 'school-theme' ),
+        'all_items'             => __( 'All Staff Category', 'school-theme' ),
+        'parent_item'           => __( 'Parent Staff Category', 'school-theme' ),
+        'parent_item_colon'     => __( 'Parent Staff Category:', 'school-theme' ),
+        'edit_item'             => __( 'Edit Staff Category', 'school-theme' ),
+        'view_item'             => __( 'View Staff Category', 'school-theme' ),
+        'update_item'           => __( 'Update Staff Category', 'school-theme' ),
+        'add_new_item'          => __( 'Add New Staff Category', 'school-theme' ),
+        'new_item_name'         => __( 'New Staff Category Name', 'school-theme' ),
+        'template_name'         => __( 'Staff Category Archives', 'school-theme' ),
+        'menu_name'             => __( 'Staff Category', 'school-theme' ),
+        'not_found'             => __( 'No Staff categories found.', 'school-theme' ),
+        'no_terms'              => __( 'No Staff categories', 'school-theme' ),
+        'items_list_navigation' => __( 'Staff Categories list navigation', 'school-theme' ),
+        'items_list'            => __( 'Staff Categories list', 'school-theme' ),
+        'item_link'             => __( 'Staff Category Link', 'school-theme' ),
+        'item_link_description' => __( 'A link to a Staff category.', 'school-theme' ),
+    );
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
+        'show_in_nav_menu'  => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'staff-categories' ),
+        'capabilities'      => array(
+        // Codes from chatgpt
+        'manage_terms' => '', // Set to an empty string to disable managing terms
+        'edit_terms'   => '', // Set to an empty string to disable editing terms
+        'delete_terms' => '', // Set to an empty string to disable deleting terms
+        'assign_terms' => 'edit_posts', // Keep assigning terms with the 'edit_posts' capability, only authors and editors can assign the terms to new staff
+        ),
+    );
+    register_taxonomy( 'fwd-staff-category', array( 'fwd-staff' ), $args );
+
 }
 add_action( 'init', 'schoolsite_register_taxonomies' );
 
