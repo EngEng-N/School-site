@@ -69,6 +69,74 @@ function schoolsite_register_custom_post_types() {
         'template_lock' => 'all'
     );
     register_post_type( 'fwd-student', $args );
+
+    // Staff CPT
+    $labels = array(
+        'name'                     => _x( 'Staff', 'post type general name', 'school-theme' ),
+        'singular_name'            => _x( 'Staff', 'post type singular name', 'school-theme' ),
+        'add_new'                  => _x( 'Add New', 'Staff', 'school-theme' ),
+        'add_new_item'             => __( 'Add New Staff', 'school-theme' ),
+        'edit_item'                => __( 'Edit Staff', 'school-theme' ),
+        'new_item'                 => __( 'New Staff', 'school-theme' ),
+        'view_item'                => __( 'View Staff', 'school-theme' ),
+        'view_items'               => __( 'View Staff', 'school-theme' ),
+        'search_items'             => __( 'Search Staff', 'school-theme' ),
+        'not_found'                => __( 'No Staff found.', 'school-theme' ),
+        'not_found_in_trash'       => __( 'No Staff found in Trash.', 'school-theme' ),
+        'parent_item_colon'        => __( 'Parent Staff:', 'school-theme' ),
+        'all_items'                => __( 'All Staff', 'school-theme' ),
+        'archives'                 => __( 'Staff Archives', 'school-theme' ),
+        'attributes'               => __( 'Staff Attributes', 'school-theme' ),
+        'insert_into_item'         => __( 'Insert into Staff', 'school-theme' ),
+        'uploaded_to_this_item'    => __( 'Uploaded to this Staff', 'school-theme' ),
+        'featured_image'           => __( 'Staff featured image', 'school-theme' ),
+        'set_featured_image'       => __( 'Set Staff featured image', 'school-theme' ),
+        'remove_featured_image'    => __( 'Remove Staff featured image', 'school-theme' ),
+        'use_featured_image'       => __( 'Use as Staff image', 'school-theme' ),
+        'menu_name'                => _x( 'Staff', 'admin menu', 'school-theme' ),
+        'filter_items_list'        => __( 'Filter Staff list', 'school-theme' ),
+        'items_list_navigation'    => __( 'Staff list navigation', 'school-theme' ),
+        'items_list'               => __( 'Staff list', 'school-theme' ),
+        'item_published'           => __( 'Staff published.', 'school-theme' ),
+        'item_published_privately' => __( 'Staff published privately.', 'school-theme' ),
+        'item_revereted_to_draft'  => __( 'Staff reverted to draft.', 'school-theme' ),
+        'item_trashed'             => __( 'Staff trashed.', 'school-theme' ),
+        'item_scheduled'           => __( 'Staff scheduled.', 'school-theme' ),
+        'item_updated'             => __( 'Staff updated.', 'school-theme' ),
+        'item_link'                => __( 'Staff link.', 'school-theme' ),
+        'item_link_description'    => __( 'A link to a Staff.', 'school-theme' ),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus'  => true,
+        'show_in_admin_bar'  => true,
+        'show_in_rest'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'staff' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 5,
+        'menu_icon'          => 'dashicons-groups',
+        'supports'           => array( 'title', 'editor', 'thumbnail' ),
+        'template' => array(
+            array('core/paragraph', array(
+                'placeholder' => 'Enter description here...'
+            )),
+            array('core/button', array(
+                'text' => 'Click Here',
+                'url' => '#',
+                'align' => 'center'
+            ))
+        ),
+        'template_lock' => 'all'
+    );
+    register_post_type( 'fwd-staff', $args );
 }
 add_action( 'init', 'schoolsite_register_custom_post_types' );
 
