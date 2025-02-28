@@ -45,6 +45,38 @@ function change_student_cpt_title_placeholder($title, $post)
 }
 add_filter('enter_title_here', 'change_student_cpt_title_placeholder', 10, 2);
 
+function school_setup()
+{
+    add_editor_style(get_stylesheet_uri());
+
+
+    add_image_size('600x400', 400, 600, true);
+
+    add_image_size('800x800', 800, 800, true);
+
+    // crop images 
+    add_image_size('200x250', 200, 250, true);
+
+    add_image_size('800x800', 800, 800, true);
+
+
+}
+
+
+function school_add_custom_image_sizes($size_names)
+{
+    $new_sizes = array(
+        '600x400' => __('400x600', 'school-theme'),
+
+        '800x800' => __('800x800', 'school-theme'),
+        '800x400' => __('800x400', 'school-theme'),
+        '400x200' => __('400x200', 'school-theme'),
+
+    );
+    return array_merge($size_names, $new_sizes);
+}
+add_filter('image_size_names_choose', 'school_add_custom_image_sizes');
+add_action('after_setup_theme', 'school_setup');
 //used the CDN version of lightgallery cuz it was faster since it just had to be enqueued
 function enqueue_lightgallery_assets()
 {
