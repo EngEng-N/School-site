@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "fwd-blocks/animated-school-block",
+	"version": "0.1.0",
+	"title": "Animated School Block",
+	"category": "text",
+	"icon": "smiley",
+	"description": "custom block for the school site",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "school-blocks",
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+	
+}

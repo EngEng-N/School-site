@@ -96,6 +96,21 @@ function enqueue_lightgallery_assets()
 }
 add_action('wp_enqueue_scripts', 'enqueue_lightgallery_assets');
 
+
+// below is the code for the AOS Library as a cdn
+function enqueue_aos_library()
+{
+
+    wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
+
+
+    wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
+
+    // Initialize 
+    wp_add_inline_script('aos-js', 'AOS.init();');
+}
+add_action('wp_enqueue_scripts', 'enqueue_aos_library');
+
 /**
  * Custom Post Types & Custom Taxonomies
  */
