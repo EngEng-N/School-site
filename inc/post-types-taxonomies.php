@@ -103,8 +103,6 @@ function schoolsite_register_custom_post_types() {
         'item_trashed'             => __( 'Staff trashed.', 'school-theme' ),
         'item_scheduled'           => __( 'Staff scheduled.', 'school-theme' ),
         'item_updated'             => __( 'Staff updated.', 'school-theme' ),
-        'item_link'                => __( 'Staff link.', 'school-theme' ),
-        'item_link_description'    => __( 'A link to a Staff.', 'school-theme' ),
     );
 
     $args = array(
@@ -125,12 +123,15 @@ function schoolsite_register_custom_post_types() {
         'menu_icon'          => 'dashicons-groups',
         'supports'           => array( 'title', 'editor', 'thumbnail' ),
         'template' => array(
-        array('core/heading', array(
-            'placeholder' => 'Enter job title here...',
-            'level' => 2
-        ))
-),
-'template_lock' => 'all'
+            array('core/heading', array(
+                'placeholder' => 'Enter job title here...',
+                'level' => 2
+            )),
+            array('core/heading', array(
+                'placeholder' => "Enter email here..."
+            ))
+        ),
+        'template_lock' => 'all'
     );
     register_post_type( 'fwd-staff', $args );
 }

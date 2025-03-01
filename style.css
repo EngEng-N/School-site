@@ -13,3 +13,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: school-theme
 Update URI: false
 */
+
+.taxonomy-fwd-staff-category.wp-block-post-terms a {
+    pointer-events: none;
+    /* Disable clicking */
+    text-decoration: none !important;
+    /* Remove underline */
+    color: inherit !important;
+    /* Match text color */
+    cursor: default;
+    /* Change cursor to default */
+}
