@@ -125,9 +125,9 @@ function schoolsite_register_custom_post_types() {
         'template' => array(
             array('core/heading', array(
                 'placeholder' => 'Enter job title here...',
-                'level' => 2
+                'level' => 4
             )),
-            array('core/heading', array(
+            array('core/paragraph', array(
                 'placeholder' => "Enter email here..."
             ))
         ),
