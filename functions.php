@@ -86,6 +86,8 @@ function school_add_custom_image_sizes($size_names)
 }
 add_filter('image_size_names_choose', 'school_add_custom_image_sizes');
 add_action('after_setup_theme', 'school_setup');
+
+
 //used the CDN version of lightgallery cuz it was faster since it just had to be enqueued
 function enqueue_lightgallery_assets()
 {
