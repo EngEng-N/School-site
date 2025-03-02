@@ -206,13 +206,13 @@ function schoolsite_register_taxonomies() {
         'show_admin_column' => true,
         'query_var'         => true,
         'rewrite'           => array( 'slug' => 'staff-categories' ),
-        // 'capabilities'      => array(
-        // // Codes from chatgpt
-        // 'manage_terms' => '', // Set to an empty string to disable managing terms
-        // 'edit_terms'   => '', // Set to an empty string to disable editing terms
-        // 'delete_terms' => '', // Set to an empty string to disable deleting terms
-        // 'assign_terms' => 'edit_posts', // Keep assigning terms with the 'edit_posts' capability, only authors and editors can assign the terms to new staff
-        // ),
+        'capabilities'      => array(
+        // Codes from chatgpt
+        'manage_terms' => '', // Set to an empty string to disable managing terms
+        'edit_terms'   => '', // Set to an empty string to disable editing terms
+        'delete_terms' => '', // Set to an empty string to disable deleting terms
+        'assign_terms' => 'edit_posts', // Keep assigning terms with the 'edit_posts' capability, only authors and editors can assign the terms to new staff
+        ),
     );
     register_taxonomy( 'fwd-staff-category', array( 'fwd-staff' ), $args );
 
